@@ -13,12 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        let nonPremiumNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listVC") as! ViewController
-//
-//        let window = UIWindow(frame: UIScreen.main.bounds)
-//        window.rootViewController = UINavigationController(rootViewController: nonPremiumNavigationController)
-//        self.window = window
-//        window.makeKeyAndVisible()
+        let nonPremiumNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listVC") as! ViewController
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UINavigationController(rootViewController: nonPremiumNavigationController)
+        self.window = window
+        window.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }
