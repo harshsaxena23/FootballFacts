@@ -110,8 +110,8 @@
             filePath = "FootballFacts/ViewControllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -216,14 +216,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "360F0FE6-D872-4EC3-ADE0-9499B21D786A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/ViewControllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "fetchLeagueStandingsFromCoreData(leagueId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -232,45 +232,45 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CCF71B59-4466-4911-9A50-FE5AC5905F11"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/ViewControllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "fetchLeagueStandingsFromServer(leagueId:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CCF71B59-4466-4911-9A50-FE5AC5905F11 - ee7d4f56964c6646"
+                  uuid = "CCF71B59-4466-4911-9A50-FE5AC5905F11 - 25d4de351359fc8b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "FootballFacts.ViewController.fetchLeagueStandingsFromServer(leagueId: Swift.Int) -&gt; ()"
                   moduleName = "FootballFacts"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akanksharsh/Desktop/FootballFacts/FootballFacts/ViewControllers/ViewController.swift"
+                  urlString = "file:///Users/akanksharsh/Documents/Documents%20%E2%80%93%20Akanksha%E2%80%99s%20MacBook%20Air/Development/October%202020/FootballFacts/FootballFacts/ViewControllers/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
                   offsetFromSymbolStart = "42">
                </Location>
                <Location
-                  uuid = "CCF71B59-4466-4911-9A50-FE5AC5905F11 - 49c3c97b6703677e"
+                  uuid = "CCF71B59-4466-4911-9A50-FE5AC5905F11 - 826a5818e216fdb3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Bool) -&gt; () in FootballFacts.ViewController.fetchLeagueStandingsFromServer(leagueId: Swift.Int) -&gt; ()"
                   moduleName = "FootballFacts"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akanksharsh/Desktop/FootballFacts/FootballFacts/ViewControllers/ViewController.swift"
+                  urlString = "file:///Users/akanksharsh/Documents/Documents%20%E2%80%93%20Akanksha%E2%80%99s%20MacBook%20Air/Development/October%202020/FootballFacts/FootballFacts/ViewControllers/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
                   offsetFromSymbolStart = "83">
                </Location>
             </Locations>
@@ -280,7 +280,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6B3BE977-1C18-4744-8B9E-BE2319BC617D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsDataSource.swift"
@@ -296,7 +296,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0F5E358D-09B7-40DC-97A3-0674B6CAFC58"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsDataSource.swift"
@@ -312,7 +312,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7A0D8E97-4A0A-4946-AE53-AC0DDDA8B433"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsDataSource.swift"
@@ -328,14 +328,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "236FE37B-42E1-420C-A71D-D9985D9F2609"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "requestLeagueStandings(leagueId:completion:failure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -344,7 +344,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C9CEAFB0-31B9-457E-908C-47C6EC7494D3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
@@ -360,7 +360,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "14B25E7E-F4D2-467B-8A21-D72279388A2E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
@@ -375,63 +375,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A115B4F8-6122-4F21-97C8-93950436C814"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "requestLeagueStandings(leagueId:completion:failure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A115B4F8-6122-4F21-97C8-93950436C814 - 63f5c7773764f54a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static FootballFacts.FootballFactsServices.requestLeagueStandings(leagueId: Swift.Int, completion: (Swift.Bool) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FootballFacts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akanksharsh/Desktop/FootballFacts/FootballFacts/Data%20Model/FootballFactsServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "632">
-               </Location>
-               <Location
-                  uuid = "A115B4F8-6122-4F21-97C8-93950436C814 - 73c20f46ee1770e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static FootballFacts.FootballFactsServices.requestLeagueStandings(leagueId: Swift.Int, completion: (Swift.Bool) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FootballFacts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akanksharsh/Desktop/FootballFacts/FootballFacts/Data%20Model/FootballFactsServices.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "281">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DC96D174-6009-4C25-826B-F5C91125B51F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "fetchLeagueTitle(leagueID:completion:failure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -440,7 +392,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "192F30A8-4695-4C7A-8F72-4018F8F1D207"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
@@ -456,14 +408,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B5BD46A2-7F52-4E8F-94C5-22DE137DB4C0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/ViewControllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "fetchLeagueStandingsFromServer(leagueId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -488,7 +440,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EAB7C552-DD02-4B79-AC71-FE8B32EE20D4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
@@ -497,6 +449,118 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "requestLeagueStandings(leagueId:completion:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B38F1923-113F-437C-BEEE-6AA5AD79A5C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getCrestImage(_:completion:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B38F1923-113F-437C-BEEE-6AA5AD79A5C9 - df1b883d50df799"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static FootballFacts.FootballFactsServices.getCrestImage(_: Swift.String, completion: (__C.UIImage) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "FootballFacts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akanksharsh/Documents/Documents%20%E2%80%93%20Akanksha%E2%80%99s%20MacBook%20Air/Development/October%202020/FootballFacts/FootballFacts/Data%20Model/FootballFactsServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "249">
+               </Location>
+               <Location
+                  uuid = "B38F1923-113F-437C-BEEE-6AA5AD79A5C9 - 1cd3bc0fa574a4fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in static FootballFacts.FootballFactsServices.getCrestImage(_: Swift.String, completion: (__C.UIImage) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "FootballFacts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akanksharsh/Documents/Documents%20%E2%80%93%20Akanksha%E2%80%99s%20MacBook%20Air/Development/October%202020/FootballFacts/FootballFacts/Data%20Model/FootballFactsServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "404B8F04-1AD1-4EB0-9D58-0D7BB255789F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootballFacts/ViewControllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "fetchLeagueStandingsFromServer(leagueId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEBEC3F6-0895-47A5-A547-A857F4D14D8F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootballFacts/Data Model/FootballFactsServices.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "getCrestImage(_:completion:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD124EEF-CB98-4191-87E0-F8ACD08426A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootballFacts/ViewControllers/DetailTeamTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0435CBD7-0A54-4CB9-ADA3-739489D38044"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FootballFacts/Utility Classes/FootballFactsUtility.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getSvgImage(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

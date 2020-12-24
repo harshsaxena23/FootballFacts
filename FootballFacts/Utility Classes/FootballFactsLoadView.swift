@@ -7,6 +7,7 @@
 
 import UIKit
 import MBProgressHUD
+import SDWebImageSVGCoder
 
 
 class FootballFactsLoadView{
@@ -40,5 +41,25 @@ class FootballFactsLoadView{
     }
     
     class func navigateToDetailScreen(navigationController: UINavigationController, teamDetails: Standings){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = storyBoard.instantiateViewController(identifier: "detailViewController") as! DetailTeamTableViewController
+        detailVC.teamDetails = teamDetails
+        navigationController.pushViewController(detailVC, animated: true)
+        
+    }
+    
+    class func loadCellForStandings(cell: StandingsTableViewCell, indexPath: IndexPath, standings: Standings){
+        cell.teamNameLabel.text = standings.name
+            let SVGCoder = SDImageSVGCoder.shared
+            SDImageCodersManager.shared.addCoder(SVGCoder)
+        if let urlString = standings.crest_url{
+            let url = URL(string: urlString)
+            cell.teamIconImageView.sd_setImage(with: url!, placeholderImage: UIImage(named: "img_background"), completed: nil)
+        }else{
+            cell.teamIconImageView.contentMode = .scaleAspectFill // has been added only because a proportionate size placeholder image not found
+            cell.teamIconImageView.image = UIImage(named: "img_background")
+        }
+        cell.positionLabel.text = String(standings.position)
+        cell.totalPointsLabel.text = String(standings.points)
     }
 }

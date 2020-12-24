@@ -13,3 +13,9 @@ extension UIColor{
         return UIColor(red: 25.0/255.0, green: 25.0/255.0, blue: 25.0/255.0, alpha: 1.0)
     }
 }
+
+extension UIFont{
+    class var gillSans: UIFont{
+        return UIFont(name: "Gill Sans SemiBold", size: 18.0)!
+    }
+}

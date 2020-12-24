@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImageSVGCoder
 
 class ViewController: UIViewController {
     
@@ -13,8 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var dataContainerView: UIView!
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var noDataLabel: UIView!
-    @IBOutlet weak var selectLeagueBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var pickerContainerView: UIView!
+    @IBOutlet weak var selectLeagueBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var leaguePickerView : UIPickerView!
     @IBOutlet weak var pickerContainerViewBottomLayoutConstraint: NSLayoutConstraint!
     
@@ -55,22 +56,20 @@ class ViewController: UIViewController {
             self.noDataView.isHidden = false
             FootballFactsLoadView.hideLoadingHUD(in: self.view)
         }else{
-           // self.dataView.isHidden = false
             self.noDataView.isHidden = true
             self.standingsTableView.isHidden = false
             self.leaguePickerView.reloadAllComponents()
-            self.navigationController?.navigationItem.title = competitionsArray[selectedRow].name
+            self.title = competitionsArray[selectedRow].name
             leaguePickerView.selectRow(selectedRow, inComponent: 0, animated: true)
             self.fetchLeagueStandingsFromServer(leagueId: Int(competitionsArray[selectedRow].id))
         }
-        
     }
     
     func fetchLeagueStandingsFromServer(leagueId: Int){
-        FootballFactsDataSource.fetchLeagueTitle(leagueID: leagueId) { [weak self](_) in
+        FootballFactsDataSource.fetchLeagueTitle(leagueID: leagueId) { [weak self] _ in
             FootballFactsLoadView.hideLoadingHUD(in: self?.view)
             self?.fetchLeagueStandingsFromCoreData(leagueId: leagueId)
-        } failure: { (_) in
+        } failure: { _ in
             
         }
         
@@ -85,7 +84,6 @@ class ViewController: UIViewController {
             self.standingsTableView.isHidden = false
             self.noDataView.isHidden = true
             self.standingsTableView.reloadData()
-
         }
         
         
@@ -117,7 +115,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem){
-        self.navigationController?.navigationItem.title = competitionsArray[selectedRow].name
+        FootballFactsLoadView.showLoadingHUD(in: self.view)
+        self.title = competitionsArray[selectedRow].name
         self.fetchLeagueStandingsFromServer(leagueId: Int(competitionsArray[selectedRow].id))
         self.dismissPicker()
         
@@ -139,10 +138,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StandingsTableViewCell
         if standingsArray.count != 0{
-            cell.textLabel?.text = standingsArray[indexPath.row].name
+            FootballFactsLoadView.loadCellForStandings(cell: cell, indexPath: indexPath, standings: standingsArray[indexPath.row])
         }else{
             if FootballFactsUtility.isNetworkReachable(){
                 cell.textLabel?.text = ""
@@ -155,11 +158,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isPickerContainerVisible{
+            dismissPicker()
+        }
         let teamStandingsData = standingsArray[indexPath.row]
-        
+        FootballFactsLoadView.navigateToDetailScreen(navigationController: self.navigationController!, teamDetails: teamStandingsData)
     }
-    
-    
     
 }
 

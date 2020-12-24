@@ -15,7 +15,7 @@ class FootballFactsServices{
  //   CompetitionList -> Standings -> Team
     class func requestLeague(completion:@escaping SaveComplete, failure: @escaping Failure){
         let url = URL(string: Constants.competitionsBaseUrlString)
-        AF.request(url!, method: .get, headers: ["X-Auth-Token" : "6175be159ddc40a5bc3c0f615c1ece54"]).responseJSON { (dataResponse) in
+        AF.request(url!, method: .get, headers: Constants.api_header).responseJSON { (dataResponse) in
             if let responseCode = dataResponse.response?.statusCode, responseCode != 200 || responseCode != 201 {
                 failure("message")
             }
@@ -43,7 +43,7 @@ class FootballFactsServices{
     
     class func requestLeagueStandings(leagueId: Int, completion:@escaping SaveComplete, failure: @escaping Failure){
         let url = URL(string: Constants.competitionsBaseUrlString + "/\(leagueId)/standings?standingType=TOTAL")
-        AF.request(url!, method: .get, headers: ["X-Auth-Token" : "6175be159ddc40a5bc3c0f615c1ece54"]).responseJSON { (dataResponse) in
+        AF.request(url!, method: .get, headers: Constants.api_header ).responseJSON { (dataResponse) in
             guard let responseCode = dataResponse.response?.statusCode, responseCode != 200 || responseCode != 201  else{
                 failure("Problem")
                 return
@@ -51,6 +51,7 @@ class FootballFactsServices{
             do {
                 let jsonResponse =  try JSONSerialization.jsonObject(with: dataResponse.data!, options: .mutableLeaves) as! [String:Any]
                 print(jsonResponse)
+                
                 let childContext = CoreDataPrivateContext(concurrencyType: .privateQueueConcurrencyType)
                 childContext.parent = CoreDataManager.sharedInstance.managedObjectContext
                 childContext.perform {
@@ -64,6 +65,19 @@ class FootballFactsServices{
                 }
             }catch{
                 fatalError()
+            }
+        }
+    }
+    
+    class func getCrestImage(_ urlString: String, completion:@escaping(_ image: UIImage)-> Void, failure: @escaping Failure){
+        // Did not work for SVG
+        let url = URL(string: urlString)
+        AF.request(url!).responseData { (dataResponse) in
+            let data = dataResponse.data
+            if let data = data{
+                let image = UIImage(data: data)
+                completion(image!)
+
             }
         }
     }

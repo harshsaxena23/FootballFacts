@@ -8,6 +8,8 @@ target 'FootballFacts' do
   # Pods for FootballFacts
   pod 'Alamofire', '~> 5.2'
   pod  'MBProgressHUD'
+  pod 'SDWebImageSVGCoder'
+
 
 
 end

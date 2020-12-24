@@ -32,7 +32,6 @@ class FootballFactsDataSource{
             } failure: { (_) in
                 completion(true)
             }
-
         }else{
             completion(true)
         }

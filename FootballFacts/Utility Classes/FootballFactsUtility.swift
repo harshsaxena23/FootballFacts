@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SDWebImageSVGCoder
 
 class FootballFactsUtility{
     
@@ -25,5 +26,15 @@ class FootballFactsUtility{
         }
         return false
     }
+    
+    class func getSvgImage(_ urlString: String) -> UIImageView{
+        let imageView = UIImageView()
+        let SVGCoder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+        let url = URL(string: urlString)
+        imageView.sd_setImage(with: url!, placeholderImage: UIImage(named: "img_background"), completed: nil)
+        return imageView
+    }
+    
 }
 
