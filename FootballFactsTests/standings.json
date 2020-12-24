@@ -1,0 +1,99 @@
+
+{
+    
+    "standings": [
+        {
+            "stage": "REGULAR_SEASON",
+            "type": "TOTAL",
+            "group": null,
+            "table": [
+                {
+                    "position": 1,
+                    "team": {
+                        "id": 64,
+                        "name": "Liverpool FC",
+                        "crestUrl": "https://crests.football-data.org/64.svg"
+                    },
+                    "playedGames": 14,
+                    "form": "W,W,D,W,D",
+                    "won": 9,
+                    "draw": 4,
+                    "lost": 1,
+                    "points": 31,
+                    "goalsFor": 36,
+                    "goalsAgainst": 19,
+                    "goalDifference": 17
+                },
+                {
+                    "position": 2,
+                    "team": {
+                        "id": 338,
+                        "name": "Leicester City FC",
+                        "crestUrl": "https://crests.football-data.org/338.svg"
+                    },
+                    "playedGames": 14,
+                    "form": "W,L,W,W,L",
+                    "won": 9,
+                    "draw": 0,
+                    "lost": 5,
+                    "points": 27,
+                    "goalsFor": 26,
+                    "goalsAgainst": 17,
+                    "goalDifference": 9
+                },
+                {
+                    "position": 3,
+                    "team": {
+                        "id": 66,
+                        "name": "Manchester United FC",
+                        "crestUrl": "https://crests.football-data.org/66.svg"
+                    },
+                    "playedGames": 13,
+                    "form": "W,W,D,W,W",
+                    "won": 8,
+                    "draw": 2,
+                    "lost": 3,
+                    "points": 26,
+                    "goalsFor": 28,
+                    "goalsAgainst": 21,
+                    "goalDifference": 7
+                },
+                {
+                    "position": 4,
+                    "team": {
+                        "id": 62,
+                        "name": "Everton FC",
+                        "crestUrl": "https://crests.football-data.org/62.svg"
+                    },
+                    "playedGames": 14,
+                    "form": "W,W,W,D,L",
+                    "won": 8,
+                    "draw": 2,
+                    "lost": 4,
+                    "points": 26,
+                    "goalsFor": 25,
+                    "goalsAgainst": 19,
+                    "goalDifference": 6
+                },
+                {
+                    "position": 5,
+                    "team": {
+                        "id": 61,
+                        "name": "Chelsea FC",
+                        "crestUrl": "https://crests.football-data.org/61.svg"
+                    },
+                    "playedGames": 14,
+                    "form": "W,L,L,W,D",
+                    "won": 7,
+                    "draw": 4,
+                    "lost": 3,
+                    "points": 25,
+                    "goalsFor": 29,
+                    "goalsAgainst": 14,
+                    "goalDifference": 15
+                }
+                
+            ]
+        }
+    ]
+}

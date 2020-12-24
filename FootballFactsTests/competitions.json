@@ -1,0 +1,28 @@
+{
+    "count": 1,
+    "filters": {},
+    "competitions": [
+        {
+            "id": 2021,
+            "area": {
+                "id": 2072,
+                "name": "England",
+                "countryCode": "ENG",
+                "ensignUrl": "https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+            },
+            "name": "Premier League",
+            "code": "PL",
+            "emblemUrl": null,
+            "plan": "TIER_ONE",
+            "currentSeason": {
+                "id": 619,
+                "startDate": "2020-09-12",
+                "endDate": "2021-05-23",
+                "currentMatchday": 14,
+                "winner": null
+            },
+            "numberOfAvailableSeasons": 28,
+            "lastUpdated": "2020-12-22T00:10:02Z"
+        }
+    ]
+}
