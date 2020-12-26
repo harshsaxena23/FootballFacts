@@ -17,10 +17,10 @@ class FootballFactsServices{
         let url = URL(string: Constants.competitionsBaseUrlString)
         AF.request(url!, method: .get, headers: Constants.api_header).responseJSON { (dataResponse) in
             if let responseCode = dataResponse.response?.statusCode, responseCode != 200 || responseCode != 201 {
-                failure("Error in fetch")
+                failure(Constants.errorInFetch)
             }
             guard let data = dataResponse.data else {
-                failure("Error in fetch" )
+                failure(Constants.errorInFetch)
                 return
             }
             do {
@@ -46,21 +46,19 @@ class FootballFactsServices{
                 fatalError()
             }
         }
-        
     }
     
     class func requestLeagueStandings(leagueId: Int, completion:@escaping SaveComplete, failure: @escaping Failure){
         let url = URL(string: Constants.competitionsBaseUrlString + "/\(leagueId)/standings?standingType=TOTAL")
         AF.request(url!, method: .get, headers: Constants.api_header ).responseJSON { (dataResponse) in
             guard let responseCode = dataResponse.response?.statusCode, responseCode != 200 || responseCode != 201  else{
-                failure("Problem")
+                failure(Constants.errorInFetch)
                 return
             }
             guard let data = dataResponse.data else {
-                failure("Error in fetch" )
+                failure(Constants.errorInFetch )
                 return
             }
-            
             do {
                 let jsonResponse =  try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as! [String:Any]
                 print(jsonResponse)

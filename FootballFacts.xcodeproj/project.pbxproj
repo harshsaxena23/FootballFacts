@@ -20,7 +20,7 @@
 		CDF0305525950C320095648A /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF0305425950C320095648A /* StandingsTableViewCell.swift */; };
 		CDFF9F392590BC9900F4ACDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF9F382590BC9900F4ACDB /* AppDelegate.swift */; };
 		CDFF9F3B2590BC9900F4ACDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF9F3A2590BC9900F4ACDB /* SceneDelegate.swift */; };
-		CDFF9F3D2590BC9900F4ACDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF9F3C2590BC9900F4ACDB /* ViewController.swift */; };
+		CDFF9F3D2590BC9900F4ACDB /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF9F3C2590BC9900F4ACDB /* StandingsViewController.swift */; };
 		CDFF9F402590BC9900F4ACDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDFF9F3E2590BC9900F4ACDB /* Main.storyboard */; };
 		CDFF9F422590BC9F00F4ACDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDFF9F412590BC9F00F4ACDB /* Assets.xcassets */; };
 		CDFF9F452590BC9F00F4ACDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDFF9F432590BC9F00F4ACDB /* LaunchScreen.storyboard */; };
@@ -59,7 +59,7 @@
 		CDFF9F352590BC9900F4ACDB /* FootballFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFF9F382590BC9900F4ACDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDFF9F3A2590BC9900F4ACDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CDFF9F3C2590BC9900F4ACDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDFF9F3C2590BC9900F4ACDB /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		CDFF9F3F2590BC9900F4ACDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDFF9F412590BC9F00F4ACDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDFF9F442590BC9F00F4ACDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		CDFF9F5D2590CC0A00F4ACDB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CDFF9F3C2590BC9900F4ACDB /* ViewController.swift */,
+				CDFF9F3C2590BC9900F4ACDB /* StandingsViewController.swift */,
 				CD87C386259496C1000339BE /* DetailTeamTableViewController.swift */,
 				CDF0305425950C320095648A /* StandingsTableViewCell.swift */,
 			);
@@ -348,7 +348,7 @@
 				CDFF9F522590BEAD00F4ACDB /* CoreDataManager.swift in Sources */,
 				CDFF9F632590CDF200F4ACDB /* FootballFactsServices.swift in Sources */,
 				CDFF9F5A2590C05500F4ACDB /* Constants.swift in Sources */,
-				CDFF9F3D2590BC9900F4ACDB /* ViewController.swift in Sources */,
+				CDFF9F3D2590BC9900F4ACDB /* StandingsViewController.swift in Sources */,
 				CDF0305525950C320095648A /* StandingsTableViewCell.swift in Sources */,
 				CD87C387259496C1000339BE /* DetailTeamTableViewController.swift in Sources */,
 				CDBCA86E25912EF8005D5670 /* FootballFactsUtility.swift in Sources */,

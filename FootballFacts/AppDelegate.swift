@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let nonPremiumNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listVC") as! ViewController
+        let nonPremiumNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "standingsListViewController") as! StandingsViewController
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UINavigationController(rootViewController: nonPremiumNavigationController)

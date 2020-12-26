@@ -61,7 +61,7 @@ class DetailTeamTableViewController: UITableViewController {
         
         detailLabelOutletCollection.forEach{
             $0.font = UIFont.gillSans
-            $0.textColor = .darkGray
+            $0.textColor = .secondaryLabel
         }
         self.title = teamDetails.name
         let formArray = teamDetails.form?.components(separatedBy: ",")

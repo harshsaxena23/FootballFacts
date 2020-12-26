@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImageSVGCoder
 
-class ViewController: UIViewController {
+class StandingsViewController: UIViewController {
     
     @IBOutlet weak var standingsTableView:UITableView!
     @IBOutlet weak var dataContainerView: UIView!
@@ -19,36 +19,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var leaguePickerView : UIPickerView!
     @IBOutlet weak var pickerContainerViewBottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var tappingViewToDismissPickerView: UIView!
-    
     var competitionsArray = [Competitions]()
     var standingsArray = [Standings]()
     let refreshControl = UIRefreshControl()
-    
     var isPickerContainerVisible = false
     var selectedRow = 2
     var currentRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initializeView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
+   
+    
+    func initializeView(){
         standingsTableView.delegate = self
         standingsTableView.dataSource = self
+        standingsTableView.showsVerticalScrollIndicator = false
         leaguePickerView.delegate = self
         leaguePickerView.dataSource = self
         currentRow = selectedRow
         tappingViewToDismissPickerView.isUserInteractionEnabled = true
         tappingViewToDismissPickerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissPicker)))
         self.updateContetForTableView()
-
-
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
-    @objc func dismissTappingView(_ sender: UITapGestureRecognizer){
-        self.dismissPicker()
     }
     
     func updateContetForTableView(){
@@ -71,7 +68,7 @@ class ViewController: UIViewController {
             self.dataContainerView.isHidden = false
             self.leaguePickerView.reloadAllComponents()
             self.title = competitionsArray[selectedRow].name
-            leaguePickerView.selectRow(selectedRow, inComponent: 0, animated: true)
+            self.leaguePickerView.selectRow(selectedRow, inComponent: 0, animated: true)
             self.fetchLeagueStandingsFromServer(leagueId: Int(competitionsArray[selectedRow].id))
         }
     }
@@ -83,7 +80,6 @@ class ViewController: UIViewController {
         } failure: { _ in
             
         }
-        
     }
     
     func fetchLeagueStandingsFromCoreData(leagueId: Int){
@@ -116,8 +112,8 @@ class ViewController: UIViewController {
             }
         }else{
         if !isPickerContainerVisible{
-            self.tappingViewToDismissPickerView.isHidden = false
             UIView.animate(withDuration: 0.5, animations: {
+                self.tappingViewToDismissPickerView.isHidden = false
                 self.pickerContainerViewBottomLayoutConstraint.constant = 0
                 self.view.layoutIfNeeded()
                 self.isPickerContainerVisible = true
@@ -150,7 +146,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate{
+extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return standingsArray.count
         
@@ -183,7 +179,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
 }
 
 
-extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
+extension StandingsViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -192,13 +188,27 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         return competitionsArray.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return competitionsArray[row].name! + "(\(competitionsArray[row].code!))"
-    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return competitionsArray[row].name! + "(\(competitionsArray[row].code!))"
+//    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentRow = selectedRow
         selectedRow = row
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label : UILabel
+        if let v = view as? UILabel{
+            label = v
+        }else{
+            label = UILabel()
+        }
+        label.textColor = .systemGray
+        label.textAlignment = .center
+        label.font = UIFont.gillSans
+        label.text = competitionsArray[row].name! + "(\(competitionsArray[row].code!))"
+        return label
     }
     
     

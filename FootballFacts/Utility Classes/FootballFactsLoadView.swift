@@ -16,8 +16,9 @@ class FootballFactsLoadView{
             let hud = MBProgressHUD.showAdded(to: view, animated: true)
             hud.bezelView.color = UIColor.hudBezelColor
             hud.label.text = "Loading"
-            hud.contentColor = UIColor.hudColor
+            hud.contentColor = UIColor.systemGray2
             hud.bezelView.style = MBProgressHUDBackgroundStyle.solidColor
+            hud.isOpaque = false
             view.layoutIfNeeded()
         }        
     }
@@ -64,6 +65,7 @@ class FootballFactsLoadView{
         cell.totalPointsLabel.text = String(standings.points)
     }
     
+   
     class func configureSubviewForForm(frame: CGRect, formArray: [String]) -> UIView{
         
         let width  : CGFloat = 20
