@@ -11,7 +11,7 @@
 		CD670AD425910D930069B8C0 /* CoreDataPrivateContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD670AD325910D930069B8C0 /* CoreDataPrivateContext.swift */; };
 		CD72F43125926C92008CC258 /* FootballFactsLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72F43025926C92008CC258 /* FootballFactsLoadView.swift */; };
 		CD87C387259496C1000339BE /* DetailTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87C386259496C1000339BE /* DetailTeamTableViewController.swift */; };
-		CDB2191D2593AAF4005D5838 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB2191C2593AAF4005D5838 /* Extensions.swift */; };
+		CDB2191D2593AAF4005D5838 /* ExtensionsAndEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB2191C2593AAF4005D5838 /* ExtensionsAndEnums.swift */; };
 		CDB2192A2593B152005D5838 /* FootballFactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB219292593B152005D5838 /* FootballFactsTests.swift */; };
 		CDB219402593BF91005D5838 /* competitions.json in Resources */ = {isa = PBXBuildFile; fileRef = CDB2193F2593BF91005D5838 /* competitions.json */; };
 		CDB219442593CC21005D5838 /* CoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB219432593CC20005D5838 /* CoreDataTest.swift */; };
@@ -47,7 +47,7 @@
 		CD670AD325910D930069B8C0 /* CoreDataPrivateContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPrivateContext.swift; sourceTree = "<group>"; };
 		CD72F43025926C92008CC258 /* FootballFactsLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFactsLoadView.swift; sourceTree = "<group>"; };
 		CD87C386259496C1000339BE /* DetailTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamTableViewController.swift; sourceTree = "<group>"; };
-		CDB2191C2593AAF4005D5838 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CDB2191C2593AAF4005D5838 /* ExtensionsAndEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsAndEnums.swift; sourceTree = "<group>"; };
 		CDB219272593B152005D5838 /* FootballFactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballFactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB219292593B152005D5838 /* FootballFactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballFactsTests.swift; sourceTree = "<group>"; };
 		CDB2192B2593B152005D5838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				CDFF9F592590C05500F4ACDB /* Constants.swift */,
 				CDBCA86D25912EF8005D5670 /* FootballFactsUtility.swift */,
 				CD72F43025926C92008CC258 /* FootballFactsLoadView.swift */,
-				CDB2191C2593AAF4005D5838 /* Extensions.swift */,
+				CDB2191C2593AAF4005D5838 /* ExtensionsAndEnums.swift */,
 			);
 			path = "Utility Classes";
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 				CD87C387259496C1000339BE /* DetailTeamTableViewController.swift in Sources */,
 				CDBCA86E25912EF8005D5670 /* FootballFactsUtility.swift in Sources */,
 				CD72F43125926C92008CC258 /* FootballFactsLoadView.swift in Sources */,
-				CDB2191D2593AAF4005D5838 /* Extensions.swift in Sources */,
+				CDB2191D2593AAF4005D5838 /* ExtensionsAndEnums.swift in Sources */,
 				CDFF9F662590CE0900F4ACDB /* FootballFactsDataSource.swift in Sources */,
 				CDFF9F392590BC9900F4ACDB /* AppDelegate.swift in Sources */,
 				CDFF9F3B2590BC9900F4ACDB /* SceneDelegate.swift in Sources */,

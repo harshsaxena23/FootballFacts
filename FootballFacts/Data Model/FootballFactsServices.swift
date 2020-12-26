@@ -12,27 +12,35 @@ import Alamofire
 class FootballFactsServices{
     typealias SaveComplete = (Bool) -> Void
     typealias Failure = (String) -> Void
- //   CompetitionList -> Standings -> Team
+    //   CompetitionList -> Standings -> Team
     class func requestLeague(completion:@escaping SaveComplete, failure: @escaping Failure){
         let url = URL(string: Constants.competitionsBaseUrlString)
         AF.request(url!, method: .get, headers: Constants.api_header).responseJSON { (dataResponse) in
             if let responseCode = dataResponse.response?.statusCode, responseCode != 200 || responseCode != 201 {
-                failure("message")
+                failure("Error in fetch")
+            }
+            guard let data = dataResponse.data else {
+                failure("Error in fetch" )
+                return
             }
             do {
-                let jsonResponse =  try JSONSerialization.jsonObject(with: dataResponse.data!, options: .mutableLeaves) as! [String:Any]
-                print(jsonResponse)
-                let childContext = CoreDataPrivateContext(concurrencyType: .privateQueueConcurrencyType)
-                childContext.parent = CoreDataManager.sharedInstance.managedObjectContext
-                childContext.perform {
-                    childContext.deleteCompetitions()
-                    childContext.saveCompetitionsData(jsonResponse: jsonResponse)
-                    childContext.saveContext()
-                    CoreDataManager.sharedInstance.managedObjectContext.performAndWait {
-                        CoreDataManager.sharedInstance.saveContext()
-                        completion(true)
+                let jsonResponse =  try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as! [String:Any]
+                let errorCode = jsonResponse["errorCode"] as? Int
+                if errorCode == nil{
+                    let childContext = CoreDataPrivateContext(concurrencyType: .privateQueueConcurrencyType)
+                    childContext.parent = CoreDataManager.sharedInstance.managedObjectContext
+                    childContext.perform {
+                        childContext.deleteCompetitions()
+                        childContext.saveCompetitionsData(jsonResponse: jsonResponse)
+                        childContext.saveContext()
+                        CoreDataManager.sharedInstance.managedObjectContext.performAndWait {
+                            CoreDataManager.sharedInstance.saveContext()
+                            completion(true)
+                        }
                     }
-
+                }else{
+                    let message = jsonResponse["message"] as! String
+                    failure(message)
                 }
             }catch{
                 fatalError()
@@ -48,20 +56,32 @@ class FootballFactsServices{
                 failure("Problem")
                 return
             }
+            guard let data = dataResponse.data else {
+                failure("Error in fetch" )
+                return
+            }
+            
             do {
-                let jsonResponse =  try JSONSerialization.jsonObject(with: dataResponse.data!, options: .mutableLeaves) as! [String:Any]
+                let jsonResponse =  try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as! [String:Any]
                 print(jsonResponse)
-                
-                let childContext = CoreDataPrivateContext(concurrencyType: .privateQueueConcurrencyType)
-                childContext.parent = CoreDataManager.sharedInstance.managedObjectContext
-                childContext.perform {
-                    childContext.deleteStandings(leagueId: leagueId)
-                    childContext.saveLeagueData(jsonResponse: jsonResponse, leagueId: leagueId)
-                    childContext.saveContext()
-                    CoreDataManager.sharedInstance.managedObjectContext.performAndWait{
-                        CoreDataManager.sharedInstance.saveContext()
-                        completion(true)
+                let errorCode = jsonResponse["errorCode"] as? Int
+                if errorCode == nil{
+                    
+                    let childContext = CoreDataPrivateContext(concurrencyType: .privateQueueConcurrencyType)
+                    childContext.parent = CoreDataManager.sharedInstance.managedObjectContext
+                    childContext.perform {
+                        childContext.deleteStandings(leagueId: leagueId)
+                        childContext.saveLeagueData(jsonResponse: jsonResponse, leagueId: leagueId)
+                        childContext.saveContext()
+                        CoreDataManager.sharedInstance.managedObjectContext.performAndWait{
+                            CoreDataManager.sharedInstance.saveContext()
+                            completion(true)
+                        }
                     }
+                }else{
+                    let message = jsonResponse["message"] as! String
+                    print(message)
+                    failure(message)
                 }
             }catch{
                 fatalError()
@@ -77,7 +97,7 @@ class FootballFactsServices{
             if let data = data{
                 let image = UIImage(data: data)
                 completion(image!)
-
+                
             }
         }
     }

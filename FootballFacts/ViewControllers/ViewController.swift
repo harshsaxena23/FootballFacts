@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var selectLeagueBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var leaguePickerView : UIPickerView!
     @IBOutlet weak var pickerContainerViewBottomLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tappingViewToDismissPickerView: UIView!
     
     var competitionsArray = [Competitions]()
     var standingsArray = [Standings]()
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     
     var isPickerContainerVisible = false
     var selectedRow = 2
+    var currentRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +34,21 @@ class ViewController: UIViewController {
         standingsTableView.dataSource = self
         leaguePickerView.delegate = self
         leaguePickerView.dataSource = self
+        currentRow = selectedRow
+        tappingViewToDismissPickerView.isUserInteractionEnabled = true
+        tappingViewToDismissPickerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissPicker)))
+        self.updateContetForTableView()
+
+
         
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.updateContetForTableView()
+    }
+    
+    @objc func dismissTappingView(_ sender: UITapGestureRecognizer){
+        self.dismissPicker()
     }
     
     func updateContetForTableView(){
@@ -52,12 +63,12 @@ class ViewController: UIViewController {
     func fetchComeptitionsFromCoreData(){
         self.competitionsArray = CoreDataManager.sharedInstance.fetchComeptitionsFromCoreData()
         if competitionsArray.count == 0{
-            self.standingsTableView.isHidden = true
+            self.dataContainerView.isHidden = true
             self.noDataView.isHidden = false
             FootballFactsLoadView.hideLoadingHUD(in: self.view)
         }else{
             self.noDataView.isHidden = true
-            self.standingsTableView.isHidden = false
+            self.dataContainerView.isHidden = false
             self.leaguePickerView.reloadAllComponents()
             self.title = competitionsArray[selectedRow].name
             leaguePickerView.selectRow(selectedRow, inComponent: 0, animated: true)
@@ -78,12 +89,13 @@ class ViewController: UIViewController {
     func fetchLeagueStandingsFromCoreData(leagueId: Int){
         self.standingsArray = CoreDataManager.sharedInstance.fetchStandingsFromCoreData(leagueId: Int16(leagueId))
         if self.standingsArray.count == 0{
-            self.standingsTableView.isHidden = true
+            self.dataContainerView.isHidden = true
             self.noDataView.isHidden = false
         }else{
-            self.standingsTableView.isHidden = false
+            self.dataContainerView.isHidden = false
             self.noDataView.isHidden = true
             self.standingsTableView.reloadData()
+            self.standingsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         }
         
         
@@ -94,12 +106,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func selectChoiceOfLeaguePressed(_ sender: UIBarButtonItem){
-        
-        if competitionsArray.count == 0{
-            let alertConroller = FootballFactsLoadView.showAlertFor(title: "Error", message: "You don't have an active internet action", titleAction: "OK")
-            present(alertConroller, animated: true, completion: nil)
+        if standingsArray.count == 0{
+            if !noDataView.isHidden{
+                let alertConroller = FootballFactsLoadView.showAlertFor(title: "Error", message: "You don't have an active internet action", titleAction: "OK")
+                present(alertConroller, animated: true, completion: nil)
+            }else{
+                let alertConroller = FootballFactsLoadView.showAlertFor(title: "Please Wait", message: "Data is being fetched", titleAction: "OK")
+                present(alertConroller, animated: true, completion: nil)
+            }
         }else{
         if !isPickerContainerVisible{
+            self.tappingViewToDismissPickerView.isHidden = false
             UIView.animate(withDuration: 0.5, animations: {
                 self.pickerContainerViewBottomLayoutConstraint.constant = 0
                 self.view.layoutIfNeeded()
@@ -107,7 +124,6 @@ class ViewController: UIViewController {
             })
         }
         }
-        
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem){
@@ -115,17 +131,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem){
-        FootballFactsLoadView.showLoadingHUD(in: self.view)
-        self.title = competitionsArray[selectedRow].name
-        self.fetchLeagueStandingsFromServer(leagueId: Int(competitionsArray[selectedRow].id))
+        if currentRow != selectedRow{
+            FootballFactsLoadView.showLoadingHUD(in: self.view)
+            self.title = competitionsArray[selectedRow].name
+            self.fetchLeagueStandingsFromServer(leagueId: Int(competitionsArray[selectedRow].id))
+        }
         self.dismissPicker()
-        
     }
     
-    func dismissPicker(){
+    @objc func dismissPicker(){
         UIView.animate(withDuration: 0.5, animations: {
             self.pickerContainerViewBottomLayoutConstraint.constant = -240
             self.isPickerContainerVisible = false
+            self.tappingViewToDismissPickerView.isHidden = true
             self.view.layoutIfNeeded()
         })
     }
@@ -158,9 +176,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isPickerContainerVisible{
-            dismissPicker()
-        }
         let teamStandingsData = standingsArray[indexPath.row]
         FootballFactsLoadView.navigateToDetailScreen(navigationController: self.navigationController!, teamDetails: teamStandingsData)
     }
@@ -182,6 +197,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentRow = selectedRow
         selectedRow = row
     }
     

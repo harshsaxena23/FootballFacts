@@ -14,7 +14,8 @@ class FootballFactsLoadView{
     class func showLoadingHUD(in view: UIView?){
         if let view = view{
             let hud = MBProgressHUD.showAdded(to: view, animated: true)
-            hud.bezelView.color = UIColor.clear
+            hud.bezelView.color = UIColor.hudBezelColor
+            hud.label.text = "Loading"
             hud.contentColor = UIColor.hudColor
             hud.bezelView.style = MBProgressHUDBackgroundStyle.solidColor
             view.layoutIfNeeded()
@@ -62,4 +63,31 @@ class FootballFactsLoadView{
         cell.positionLabel.text = String(standings.position)
         cell.totalPointsLabel.text = String(standings.points)
     }
+    
+    class func configureSubviewForForm(frame: CGRect, formArray: [String]) -> UIView{
+        
+        let width  : CGFloat = 20
+        let height : CGFloat = 20
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+        var xPos: CGFloat = frame.width - width
+        for (index, _) in formArray.enumerated().reversed(){
+            let view = UIView()
+            let formType: FormCase = FormCase(rawValue: formArray[index])!
+            view.frame = CGRect(x: xPos, y: frame.height/2 - height/2, width: width, height: height)
+            view.layer.cornerRadius = width / 2
+            switch formType {
+            case .won:
+                view.backgroundColor = .systemGreen
+            case .lost:
+                view.backgroundColor = .systemRed
+            case .draw:
+                view.backgroundColor = .systemOrange
+            }
+            xPos = xPos - view.frame.width - 5
+            containerView.addSubview(view)
+        }
+        return containerView
+    }
+    
+    
 }

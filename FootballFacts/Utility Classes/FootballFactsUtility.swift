@@ -27,13 +27,31 @@ class FootballFactsUtility{
         return false
     }
     
-    class func getSvgImage(_ urlString: String) -> UIImageView{
+    class func getSvgImage(_ urlString: String) -> UIImage{
         let imageView = UIImageView()
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
         let url = URL(string: urlString)
         imageView.sd_setImage(with: url!, placeholderImage: UIImage(named: "img_background"), completed: nil)
-        return imageView
+        return imageView.image!
+    }
+    
+    class func addBlurToImage(image: UIImage) -> UIImage{
+        let context = CIContext(options: nil)
+        let currentFilter = CIFilter(name: "CIGaussianBlur")
+        let beginImage = CIImage(image: image)
+        currentFilter?.setValue(beginImage, forKey: kCIInputImageKey)
+        currentFilter?.setValue(10, forKey: kCIInputRadiusKey)
+        
+        let cropFilter = CIFilter(name: "CICrop")
+        cropFilter!.setValue(currentFilter!.outputImage, forKey: kCIInputImageKey)
+        cropFilter!.setValue(CIVector(cgRect: beginImage!.extent), forKey: "inputRectangle")
+
+        let outputImage = cropFilter!.outputImage
+        let cgImage = context.createCGImage(outputImage!, from: outputImage!.extent)
+        let processedImage = UIImage(cgImage: cgImage!)
+        return processedImage
+        
     }
     
 }

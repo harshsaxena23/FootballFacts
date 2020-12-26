@@ -21,6 +21,8 @@ class DetailTeamTableViewController: UITableViewController {
     @IBOutlet weak var gamesDrawnLabel: UILabel!
     @IBOutlet weak var crestImageView: UIImageView!
     @IBOutlet var detailLabelOutletCollection : [UILabel]!
+    @IBOutlet weak var formContainerView: UIView!
+    @IBOutlet weak var backgroundImageView : UIImageView!
     var teamDetails : Standings!
     
     
@@ -47,15 +49,31 @@ class DetailTeamTableViewController: UITableViewController {
         goalsForLabel.text = String(teamDetails.goalsFor)
         goalsAgainstLabel.text = String(teamDetails.goalsAgainst)
         goalsDifferenceLabel.text = String(teamDetails.goalsDifference)
-        crestImageView.image = FootballFactsUtility.getSvgImage(teamDetails.crest_url!).image
+        if let crest_url = teamDetails.crest_url{
+            crestImageView.image = FootballFactsUtility.getSvgImage(crest_url)
+            let data = crestImageView.image?.pngData()
+            let pngImage = UIImage(data: data!)
+            backgroundImageView.contentMode = .scaleAspectFill
+            backgroundImageView.image = FootballFactsUtility.addBlurToImage(image: pngImage!)
+            
+
+        }
+        
         detailLabelOutletCollection.forEach{
             $0.font = UIFont.gillSans
+            $0.textColor = .darkGray
         }
         self.title = teamDetails.name
+        let formArray = teamDetails.form?.components(separatedBy: ",")
+        if let formArray = formArray{
+            self.formContainerView.addSubview(FootballFactsLoadView.configureSubviewForForm(frame: formContainerView.frame, formArray: formArray))
+        }
+        
         tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
         if section == 0 {
             return 1
         }
