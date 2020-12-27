@@ -19,7 +19,7 @@
   
  <p> The DetailTeamTableViewController consisiting of static cells represent the selected team's performance of the current season. 
   
-  <p> Offline support has been added in the app using CoreDataModel which consists of two entities, Standings and Competitions. Competitions store related information regading the choice of league whereas Standings represents the standings of the team in each league</p>
+  <p> Offline support has been added in the app using CoreDataModel which consists of two entities, <i>Standings</i> and <i>Competitions</i>. Competitions store related information regading the choice of league whereas Standings represents the standings of the team in each league</p>
   
-<h2>Unit Tests<h2>  
+<h2>Unit Tests</h2>  
 <p> Unit tests have been written for retreiving data for both data model entities - Competitions and Standings and two external json files representing the data has been stored in the project to serve as a sample for testing the data.
